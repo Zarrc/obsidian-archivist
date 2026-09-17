@@ -11,10 +11,7 @@
 ```
 /
 ├── CLAUDE.md              ← 本文件：Schema 配置（Claude 的"说明书"）
-├── raw/                   ← 原始资料层（只读，不可修改）
-│   ├── README.md
-│   ├── 素材/              ← 文章内嵌图片的本地存储
-│   └── (按主题或日期组织)
+├── Attachments/           ← 原始大块头：逐字稿 / PDF / 文章内嵌图片（Obsidian 附件目录）
 ├── wiki/                  ← 知识库层（Claude 全权维护）
 │   ├── index.md           ← 知识域导航（指向各域）
 │   ├── log.md             ← 操作日志（仅追加）
@@ -49,7 +46,7 @@ wiki/AI/                    ← 知识域示例（可按需换成任何主题）
 
 | 层级 | 目录 | 谁可以修改 |
 |------|------|-----------|
-| 原始资料 | `raw/` | **只有用户**，Claude 只读 |
+| 原档 | `Attachments/` | 用户 / Claude 均可写；**只作存档**，来源内容直接归档进 wiki |
 | 知识库 | `wiki/` | **只有 Claude**，用户可读 |
 | Schema | `CLAUDE.md` | 用户和 Claude 共同演进 |
 
@@ -110,7 +107,7 @@ Wiki 链接格式：`[[AI/Harnessing/实体/OpenAI]]` 或直接用 `[[OpenAI]]`�
 - 页面间用 Obsidian Wiki-link：`[[页面名]]`
 - 提到的每个实体/概念都应链接到对应页面
 - 如果对应页面不存在，先创建再引用
-- **重要**：每个 `wiki/来源/` 摘要页的顶部必须用干净的 wiki-link 链接到对应的 raw 文件，例如：`[[raw/Effective harnesses for long-running agents]]`，**不要**用反引号包住，否则 Obsidian 图谱视图无法识别链接
+- **重要**：每个 `wiki/来源/` 摘要页的顶部必须放**真实出处** —— 原文 URL（Markdown 链接）或 `Attachments/` 原档的干净 wiki-link（`[[附件名]]`，**不要**用反引号包住，否则 Obsidian 图谱视图无法识别链接）。**不要**链不存在的占位目标
 
 ### 创建时机规则（Karpathy 自下而上原则）
 
@@ -139,7 +136,7 @@ Wiki 链接格式：`[[AI/Harnessing/实体/OpenAI]]` 或直接用 `[[OpenAI]]`�
 
 当用户说"摄取 XXX"或"处理 XXX"时：
 
-1. **阅读** `raw/` 中的目标文件（含图片）
+1. **阅读** 用户提供的资料（粘贴文本 / URL / `Attachments/` 原档，含图片）
 2. **讨论** 与用户确认关键要点和侧重点
 3. **创建** `wiki/(主题域)/来源/YYYY-MM-DD 标题.md` 摘要页
 4. **更新** 相关的实体页（不存在则创建）
@@ -219,8 +216,8 @@ index.md 顶部应设 `## ⭐ 新奇观点（Pinned）` 区块，列出：
 
 ## 图片处理
 
-- 原始资料中的图片应下载到 `raw/素材/` 目录
-- wiki 页面引用图片用：`![[素材/图片名.png]]`
+- 原始资料中的图片下载到 `Attachments/` 目录
+- wiki 页面引用图片用：`![[图片名.png]]`（Obsidian 附件嵌入语法）
 - Claude 读取 Markdown 时先处理文本，再单独读取图片文件获取视觉信息
 
 ---
@@ -243,6 +240,7 @@ find wiki/AI/Harnessing -name "*.md" | grep -v index | grep -v log | wc -l
 
 ---
 
+*Schema 版本：v2.1 — 2026-09-17*（**废除 `raw/` 原始资料层** → 原档归 `Attachments/`；来源页顶部**直链真实出处**（原文 URL / 原档），不链占位目标）  
 *Schema 版本：v2.0 — 2026-09-04*（obsidian-archivist 公开发行版：聚焦 wiki 知识库轨；认证备考见 cert-tracker）  
 *Schema 版本：v1.5 — 2026-08-17*（新增：工具箱与代理分区、笔记子代理工作流）  
 *如需调整结构或约定，直接修改本文件，Claude 下次会话时会遵循新规则。*

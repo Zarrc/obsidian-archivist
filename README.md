@@ -6,15 +6,17 @@
 
 本仓库打包了一套**已在真实 Obsidian vault 中运行**的部署（Schema + 子代理 + 5 个技能），可直接复制进你的 vault 使用。
 
+> 📌 **2026-09-17 更新**：已**废除 `raw/` 原始资料层** —— 原档统一放 `Attachments/`（Obsidian 附件目录），来源页顶部**直链真实出处**（原文 URL 或原档）。旧版要求的 `[[raw/xxx]]` 占位链接**已不再使用**，见 Schema v2.1。
+
 ---
 
 ## ✨ 特性
 
 | 特性 | 说明 |
 |------|------|
-| 📥 **来源摄取（Ingest）** | 读 `raw/` 资料（含图片）→ 写 `wiki/(主题域)/来源/` 摘要页 |
+| 📥 **来源摄取（Ingest）** | 读资料（粘贴文本 / URL / `Attachments/` 原档，含图片）→ 写 `wiki/(主题域)/来源/` 摘要页 |
 | 🧠 **自下而上建概念** | 同一概念/实体在 **≥2 篇来源** 中出现才建独立页（Karpathy 规则），避免过度抽象 |
-| 🔗 **全库交叉引用** | Obsidian Wiki-link 图谱；来源页顶部干净链接回 raw 文件 |
+| 🔗 **全库交叉引用** | Obsidian Wiki-link 图谱；来源页顶部**直链真实出处**（原文 URL / `Attachments/` 原档） |
 | 📊 **索引 + 新奇观点** | `wiki/index.md` 自动同步 + `⭐ 新奇观点` 置顶区 |
 | 🧹 **Lint 健康检查** | 孤儿页 / 缺页链接 / 矛盾说法 / index 失同步一键排查 |
 | 📜 **操作日志** | `wiki/log.md` 仅追加，每次操作留痕 |
@@ -56,14 +58,14 @@ obsidian-archivist/
 
    （或把 `.claude/` 与 `CLAUDE.md` 手动拖进 vault 根。）
 
-2. **建目录骨架**（vault 为空时）：参照 `template-vault/`，创建 `raw/` `wiki/` `Project/` `Self/` `outputs/`。
+2. **建目录骨架**（vault 为空时）：参照 `template-vault/`，创建 `Attachments/` `wiki/` `Project/` `Self/` `outputs/`。
 
 3. **启动 Claude Code**：在 vault 根目录打开会话即可。Claude 会自动读取 `CLAUDE.md` + `wiki/index.md`。
 
 ### 开始使用
 
 ```text
-你：摄取 raw/xxx 这篇（或贴一个 URL / 摘要）
+你：摄取这篇（直接贴 URL / 摘要，或把原档丢进 Attachments/）
 Claude：派 notes-archivist → 产出 来源页/概念页/实体页 → 更新 index + log → 你审阅
 你：检查 wiki / lint
 Claude：查孤儿页、缺页链接、矛盾、index 失同步
@@ -75,7 +77,7 @@ Claude：查孤儿页、缺页链接、矛盾、index 失同步
 
 | 目录 | 层级 | 说明 |
 |------|------|------|
-| `raw/` | 原始资料（**用户专属**） | 只读，Claude 不修改 |
+| `Attachments/` | 原档（逐字稿 / PDF / 图片） | 只存不加工；**来源内容直接归档进 `wiki/`** |
 | `wiki/` | 知识库（**Claude 维护**） | 按知识域/子话题组织：`来源/` `实体/` `概念/` `对比/` |
 | `Project/` · `Self/` | 项目 / 个人笔记 | 用户自由 |
 | `outputs/` | 查询输出 | 可随时清理 |
