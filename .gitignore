@@ -12,4 +12,8 @@ desktop.ini
 
 # Misc
 node_modules/
-*.log
+
+# ⚠️ 别用裸 `*.log` —— 它会连 vault 的 `wiki/log.md`（Schema 规定的操作日志）一起忽略掉，
+#    用 git 备份 vault 时操作日志会静默丢失。要忽略开发日志就写具体文件名：
+npm-debug.log*
+yarn-error.log*

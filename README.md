@@ -62,6 +62,8 @@ obsidian-archivist/
 
 3. **启动 Claude Code**：在 vault 根目录打开会话即可。Claude 会自动读取 `CLAUDE.md` + `wiki/index.md`。
 
+> ⚠️ **打算用 git 备份 vault 的话**：`.gitignore` 里**别用裸 `*.log`** —— 它会把 `wiki/log.md`（Schema 规定的**操作日志**）一起忽略掉，日志就静默不进版本控制了。本仓库的 `.gitignore` 已经避开这个坑，只忽略具体开发日志文件名。
+
 ### 开始使用
 
 ```text
