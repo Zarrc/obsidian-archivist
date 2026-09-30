@@ -93,5 +93,7 @@ Claude：查孤儿页、缺页链接、矛盾、index 失同步
 
 ## 📄 许可与归属
 
-- 仓库结构、Schema、`notes-archivist` agent：自用部署整理而来，按需使用（如要开源协议请自行添加）。
-- 内置 skills 版权归原作者 [Steph Ango / kepano](https://github.com/kepano)，[obsidian-skills](https://github.com/kepano/obsidian-skills) 以 MIT 许可发布。
+本仓库以 **[MIT](LICENSE)** 发布。
+
+- 仓库结构、Schema、`notes-archivist` agent：© 2026 Zarrc，MIT。
+- `.claude/skills/` 下 5 个 skill **原样复制**自 [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)，版权归原作者 [Steph Ango / kepano](https://github.com/kepano)，同样以 MIT 发布 —— 其**原始版权声明已按要求保留**在 [LICENSE](LICENSE) 末尾。
