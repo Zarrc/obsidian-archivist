@@ -2,7 +2,7 @@
 
 > 这是 Claude 的行为配置文件（Schema）。它定义了这个知识库的结构、约定和工作流。
 > 每次会话开始时，Claude 应先阅读此文件，再阅读 `wiki/index.md`，再开始工作。
-> 本文件是 [obsidian-archivist](https://github.com/Zarrc/obsidian-archivist) 的组成部分：聚焦 **wiki 知识库轨**；认证备考请使用独立的 [cert-tracker](https://github.com/Zarrc/cert-tracker)。
+> 本文件是 [obsidian-archivist](https://github.com/Zarrc/obsidian-archivist) 的组成部分：聚焦 **wiki 知识库轨**。
 
 ---
 
@@ -28,7 +28,7 @@
 │       └── (更多子话题)/
 ├── Project/               ← 项目笔记
 ├── Self/                  ← 个人笔记
-├── Cert/ (可选)           ← 认证备考资料（工作流见 cert-tracker）
+├── Cert/ (可选)           ← 认证备考资料（按考试分目录，约定见该目录 README）
 └── outputs/               ← 查询输出
 ```
 
@@ -176,11 +176,7 @@ Wiki 链接格式：`[[AI/Harnessing/实体/OpenAI]]` 或直接用 `[[OpenAI]]`�
 
 ### 4. 认证备考（Cert Prep）
 
-本 Schema 聚焦 **wiki 知识库轨**，**不重复定义**认证备考工作流。
-
-认证备考（按 Domain 归纳笔记、生成练习题、进度条等）请使用独立的 [cert-tracker](https://github.com/Zarrc/cert-tracker) 仓库：把资料放进它的 `resources/`，按其 `CLAUDE.md` 工作流处理。
-
-如果当前 vault 里已有 `Cert/` 结构，处理其中的资料时参照 cert-tracker 的约定执行。
+本 Schema 聚焦 **wiki 知识库轨**，**不重复定义**认证备考工作流。若 vault 里有 `Cert/` 目录，按该目录 README 的约定整理（按考试分目录，无内置工作流）。
 
 ---
 
@@ -243,6 +239,7 @@ find wiki/AI/Harnessing -name "*.md" | grep -v index | grep -v log | wc -l
 
 ---
 
+*Schema 版本：v2.1 — 2026-10-13*（移除 cert-tracker 引用——该项目已删除，原链接 404；`Cert/` 目录约定改为就地说明，本 Schema 仍不定义备考工作流）  
 *Schema 版本：v2.0 — 2026-09-04*（obsidian-archivist 公开发行版：聚焦 wiki 知识库轨；认证备考见 cert-tracker）  
 *Schema 版本：v1.5 — 2026-08-17*（新增：工具箱与代理分区、笔记子代理工作流）  
 *如需调整结构或约定，直接修改本文件，Claude 下次会话时会遵循新规则。*

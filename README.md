@@ -82,15 +82,6 @@ Claude：查孤儿页、缺页链接、矛盾、index 失同步
 
 核心机制见 `CLAUDE.md`（页面 frontmatter 约定、Karpathy 创建时机规则、Ingest / Query / Lint 工作流、Index 维护、Log 格式）。
 
-## 🔗 与 cert-tracker 的关系
-
-认证备考（Domain 笔记、练习题、进度条）是**另一套独立系统** [cert-tracker](https://github.com/Zarrc/cert-tracker)，专门用于"按考试 Domain 自动归纳笔记 + 生成练习题 + 追踪进度"。
-
-- 本仓库**刻意不重复** cert 备考工作流——如果你两者都在用，它们的分工是：
-  - **知识/文章/想法** → 本仓库（wiki 知识库）
-  - **考证/刷题/进度** → cert-tracker
-- 两个仓库同源于同一套 vault 部署，`CLAUDE.md` 历史版本中曾包含 cert 工作流，现已拆出以避免两处维护。
-
 ## 📄 许可与归属
 
 本仓库以 **[MIT](LICENSE)** 发布。
