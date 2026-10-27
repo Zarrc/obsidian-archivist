@@ -238,7 +238,8 @@ find wiki/AI/Harnessing -name "*.md" | grep -v index | grep -v log | wc -l
 
 ---
 
-*Schema 版本：v2.2 — 2026-10-27*（移除 cert-tracker 链接——该项目已删除，原链接 404；Cert/ 约定改为就地说明）  
+*Schema 版本：v2.3 — 2026-10-27*（与远端发布线合流：并入 LICENSE / NOTICE；Cert/ 就地说明措辞统一，cert-tracker 死链清零）  
+*Schema 版本：v2.2 — 2026-10-13*（移除 cert-tracker 引用——该项目已删除，原链接 404；`Cert/` 目录约定改为就地说明，本 Schema 仍不定义备考工作流）  
 *Schema 版本：v2.1 — 2026-09-17*（**废除 `raw/` 原始资料层** → 原档归 `Attachments/`；来源页顶部**直链真实出处**（原文 URL / 原档），不链占位目标）  
 *Schema 版本：v2.0 — 2026-09-04*（obsidian-archivist 公开发行版：聚焦 wiki 知识库轨；认证备考见 cert-tracker）  
 *Schema 版本：v1.5 — 2026-08-17*（新增：工具箱与代理分区、笔记子代理工作流）  
